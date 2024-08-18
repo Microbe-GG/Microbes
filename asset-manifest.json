@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.js": "/Microbe-GG.github.io/Microbes/static/js/main.48d4ba47.js",
-    "index.html": "/Microbe-GG.github.io/Microbes/index.html",
-    "main.48d4ba47.js.map": "/Microbe-GG.github.io/Microbes/static/js/main.48d4ba47.js.map"
+    "main.js": "/Microbes/static/js/main.48d4ba47.js",
+    "index.html": "/Microbes/index.html",
+    "main.48d4ba47.js.map": "/Microbes/static/js/main.48d4ba47.js.map"
   },
   "entrypoints": [
     "static/js/main.48d4ba47.js"
