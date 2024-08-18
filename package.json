@@ -1,24 +1,30 @@
 {
-  "name": "learn",
+  "name": "microbes",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Microbe-GG.github.io/Microbes",
+  "homepage": "https://microbe-gg.github.io/microbes",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
-    "express": "^4.18.2",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
+
   "scripts": {
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
   },
   "browserslist": {
     "production": [
@@ -33,7 +39,6 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^6.1.1",
-    "globals": "^15.9.0"
+    "gh-pages": "^6.1.1"
   }
 }
