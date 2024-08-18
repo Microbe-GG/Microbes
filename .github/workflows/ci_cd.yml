@@ -1,20 +1,20 @@
-name: CI
+name: CI/CD
 
 on: push
 
 jobs:
-  super-lint:
-    name: Lint code base
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+  # super-lint:
+  #   name: Lint code base
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Checkout code
+  #       uses: actions/checkout@v2
 
-      - name: Run Super-Linter
-        uses: github/super-linter@v4
-        env:
-          DEFAULT_BRANCH: main
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  #     - name: Run Super-Linter
+  #       uses: github/super-linter@v4
+  #       env:
+  #         DEFAULT_BRANCH: main
+  #         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   build:
     runs-on: ubuntu-latest
     strategy:
@@ -30,3 +30,10 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm ci
+
+    - name: Deploy with gh-pages
+      run: |
+        git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+        npm run deploy -- -u "github-actions-bot <support+actions@github.com>"
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
